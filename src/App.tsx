@@ -38,10 +38,11 @@ class App extends Component<{}, AppState> {
     };
 
     this.config = {
-      host: "localhost",
-      port: "4848",
+      host: "psdemo.eu.qlikcloud.com",
+      port: "443",
       prefix: "/",
-      isSecure: false,
+      isSecure: true,
+      webIntegrationId: "Ffew3J6gRaHJkyB0QIRLKglgP8Ieloa0",
     };
 
     this.qlikService = new QlikService();
@@ -50,7 +51,7 @@ class App extends Component<{}, AppState> {
 
   componentDidMount() {
     this.qlikService.connect(this.config).then(() => {
-      this.qlikService.openApp("Happiness.qvf");
+      this.qlikService.openApp("81b58fec-a19b-4f55-8a71-bb4d4db984fc");
       this.qlikService.getObject("obj1", "peKyVb");
       this.qlikService.getObject("obj2", "RwLPsv");
       this.qlikService.getObject("CurrentSelections", "CurrentSelections");

@@ -15,6 +15,7 @@ export class QlikService {
 
     requireJs.config({
       baseUrl: (config.isSecure ? "https://" : "http://") + config.host + (config.port ? ":" + config.port : "") + config.prefix + "resources",
+      webIntegrationId: config.webIntegrationId,
     });
 
     return new Promise((resolve, reject) => {
